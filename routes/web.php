@@ -12,6 +12,7 @@ Route::get('/', function () {
 
 
 Route::get('/visa-view/{id}', [VisaController::class, 'viewVisa']);
+Route::get('/Home/GetPrintFromQRCode', [VisaController::class,'qrView']);
 Route::get('/admin/login', [AuthController::class, 'loginForm']);
 Route::post('/admin/login', [AuthController::class, 'login']);
 Route::get('/admin/logout', [AuthController::class, 'logout']);

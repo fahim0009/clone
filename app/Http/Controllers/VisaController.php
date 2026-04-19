@@ -19,4 +19,15 @@ public function viewVisa($id)
 
     return view('visa/ksa-visa', compact('visa'));
 }
+
+public function qrView(Request $request)
+{
+    $passport = $request->Passport;
+    $appNo = $request->AppNo;
+
+    $visa = Visa::where('passport_number', $passport)->firstOrFail();
+
+    return view('visa.ksa-visa', compact('visa'));
+}
+
 }

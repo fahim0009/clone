@@ -152,11 +152,10 @@
                                     Delete
                                 </button>
                             </form>
-                            <a href="/visa-view/{{ $visa->id }}"
-                            target="_blank"
-                            class="btn btn-info btn-sm">
-                            View
-                            </a>
+                   <a target="_blank"
+                        href="{{ url('/Home/GetPrintFromQRCode?AppNo='.$visa->visa_no.'&Passport='.$visa->passport_number.'&NatIso=BGD&nonce='.md5(rand()).'&hash='.hash('sha256',$visa->visa_no)) }}">
+                        View
+                        </a>
                         </td>
                     </tr>
 
