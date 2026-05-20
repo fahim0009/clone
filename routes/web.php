@@ -4,13 +4,14 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\VisaController;
+use App\Http\Controllers\EcCardController;
 use App\Http\Controllers\Admin\VisaController as AdminVisaController;
 
 Route::get('/', function () {
     return redirect('/admin/login');
 });
 
-
+Route::get('/ec-card/verify/{card_no}', [EcCardController::class, 'verify']);
 Route::get('/visa-view/{id}', [VisaController::class, 'viewVisa']);
 Route::get('/Home/GetPrintFromQRCode', [VisaController::class,'qrView']);
 Route::get('/admin/login', [AuthController::class, 'loginForm']);
